@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship DKR Sawangan - Charity Day</title>
+
+<!-- Fonts: Outfit (Modern & Playful) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<style>
+    :root {
+        --primary: #2563eb;       /* Royal Blue */
+        --accent: #f59e0b;        /* Amber/Gold */
+        --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%);
+        --text-dark: #1e293b;
+        --text-gray: #64748b;
+        --white: #ffffff;
+        --shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
+        --radius: 24px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text-dark);
+        line-height: 1.6;
+        min-height: 100vh;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+
+    /* --- UTILITIES --- */
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    .btn-primary:hover {
+        background: #1d4ed8;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-wa {
+        background: #25D366;
+        color: white;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    /* --- HERO --- */
+    .hero {
+        padding: 80px 0 60px;
+        text-align: center;
+        position: relative;
+    }
+
+    .logo-container {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 25px;
+        background: white;
+        border-radius: 40px; /* Squircle shape */
+        padding: 15px;
+        box-shadow: var(--shadow);
+        display: flex; align-items: center; justify-content: center;
+        transform: rotate(-3deg); /* Sedikit miring biar playful */
+        transition: 0.3s;
+    }
+    
+    .logo-container:hover { transform: rotate(0deg) scale(1.05); }
+
+    .logo-container img { width: 100%; height: auto; object-fit: contain; }
+
+    .hero h1 { 
+        font-size: 2.5rem; 
+        color: var(--text-dark); 
+        line-height: 1.1; 
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #2563eb, #4f46e5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .badge {
+        display: inline-block;
+        background: white;
+        color: var(--primary);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        margin-top: 10px;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    /* --- SECTIONS GENERAL --- */
+    .section { padding: 60px 0; }
+    
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2rem; margin-bottom: 10px; color: var(--text-dark); }
+    .section-title p { color: var(--text-gray); }
+
+    /* --- CARD STYLE (Base) --- */
+    .card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 35px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* --- AGENDA (Timeline) --- */
+    .agenda-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    
+    .agenda-item {
+        background: white; padding: 30px; border-radius: var(--radius);
+        position: relative; overflow: hidden;
+        transition: 0.3s;
+        border: 1px solid #f1f5f9;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
+    .agenda-item:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+    .agenda-date {
+        display: inline-block;
+        background: #eff6ff;
+        color: var(--primary);
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+    }
+
+    /* --- SPONSORSHIP TIERS --- */
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+    .tier-card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 30px;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+        border: 2px solid transparent;
+        box-shadow: var(--shadow);
+        display: flex; flex-direction: column;
+    }
+
+    .tier-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+    }
+
+    .tier-icon { 
+        width: 60px; height: 60px; 
+        background: #f8fafc; border-radius: 16px; 
+        display: flex; align-items: center; justify-content: center;
+        font-size: 30px; margin-bottom: 20px;
+    }
+
+    .price {
+        font-size: 2rem; font-weight: 800; color: var(--text-dark);
+        font-family: 'Outfit', sans-serif; line-height: 1;
+        margin-bottom: 5px;
+    }
+    
+    .price-sub { font-size: 0.85rem; color: var(--text-gray); margin-bottom: 25px; font-weight: 500;}
+
+    .benefits li { 
+        margin-bottom: 12px; font-size: 0.95rem; display: flex; gap: 12px; color: var(--text-gray); align-items: start;
+    }
+    .benefits i { color: var(--primary); margin-top: 3px; font-weight: bold; flex-shrink: 0; }
+
+    /* Special Styling for Gold */
+    .tier-gold { border: 2px solid #fbbf24; background: linear-gradient(to bottom, #fffbeb 0%, #ffffff 100%); }
+    .tier-gold .tier-icon { background: #fef3c7; color: #d97706; }
+
+    /* PLATINUM CARD */
+    .tier-platinum {
+        grid-column: 1 / -1;
+        background: #1e293b; /* Dark Slate */
+        color: white;
+        flex-direction: row; align-items: center; gap: 40px;
+    }
+    .tier-platinum:hover { border-color: #94a3b8; }
+    .tier-platinum .price { color: white; }
+    .tier-platinum .price-sub { color: #94a3b8; }
+    .tier-platinum .tier-icon { background: rgba(255,255,255,0.1); color: white; }
+    .tier-platinum .benefits li { color: #cbd5e1; }
+    .tier-platinum .benefits i { color: #60a5fa; }
+
+    .click-hint {
+        margin-top: auto; padding-top: 20px; text-align: center;
+        font-size: 0.9rem; font-weight: 700; color: var(--primary);
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .tier-platinum .click-hint { color: white; opacity: 0.8; justify-content: flex-start; }
+
+    /* --- PAYMENT --- */
+    .payment-box {
+        text-align: center;
+        background: white; border-radius: var(--radius); padding: 40px;
+        box-shadow: var(--shadow);
+    }
+
+    .copy-container {
+        display: flex; flex-direction: column; gap: 15px;
+        max-width: 400px; margin: 0 auto 30px;
+    }
+
+    .copy-item {
+        background: #f8fafc; border: 1px solid #e2e8f0;
+        padding: 15px 20px; border-radius: 16px;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    
+    .copy-text span { font-size: 0.8rem; color: var(--text-gray); display: block; text-align: left;}
+    .copy-text strong { font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-dark); }
+
+    .btn-copy {
+        width: 45px; height: 45px; border-radius: 12px;
+        background: white; border: 1px solid #e2e8f0;
+        cursor: pointer; color: var(--primary); font-size: 1.2rem;
+        display: flex; align-items: center; justify-content: center;
+        transition: 0.2s;
+    }
+    .btn-copy:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .qris-frame {
+        width: 200px; height: 200px; margin: 0 auto;
+        border: 2px dashed #cbd5e1; border-radius: 20px; padding: 10px;
+    }
+    .qris-frame img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
+
+    /* --- FOOTER --- */
+    footer {
+        text-align: center; padding: 40px 20px;
+        color: var(--text-gray); font-size: 0.9rem;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2rem; }
+        .tier-platinum { flex-direction: column; text-align: center; padding: 40px 20px; }
+        .tier-platinum .click-hint { justify-content: center; }
+        .tier-platinum .benefits { text-align: left; align-self: stretch; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="logo-container">
+                <!-- LOGO PLACE -->
+                <img src="htpdkr.png" alt="Logo DKR" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:50px\'>⚜️</span>'">
+            </div>
+            
+            <div class="badge">CALLING SPONSORSHIP</div>
+            <h1 class="mt-3">Peringatan Baden Powell Day<br>& Giat Ramadan 1447H</h1>
+            
+            <p style="max-width: 600px; margin: 0 auto 30px;">
+                DKR Sawangan mengajak Kakak semua untuk berkolaborasi dalam gerakan sosial dan amal. 
+                Masa Bakti 2025–2028.
+            </p>
+
+            <a href="#paket" class="btn btn-primary">
+                Lihat Paket Donasi <i class="ph ph-arrow-down" style="font-weight: bold;"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- INTRO CARD -->
+    <section class="section">
+        <div class="container">
+            <div class="card" style="text-align: center;">
+                <h2 style="color: var(--primary);">Kolaborasi Kebaikan 🤝</h2>
+                <p style="margin-bottom: 20px; text-align: left; line-height: 1.8;">
+                    <strong>Yth. Calon Mitra & Donatur,</strong><br>
+                    Dalam rangka menyambut dua momen besar kepramukaan dan keagamaan, Dewan Kerja Ranting (DKR) Sawangan akan menyelenggarakan kegiatan sosial yang melibatkan anggota Pramuka Penegak & Pandega serta masyarakat umum.
+                </p>
+                <p style="text-align: left; line-height: 1.8;">
+                    Kami membuka kesempatan bagi Bapak/Ibu/Kakak, Alumni, serta Pelaku Usaha untuk turut andil sebagai <strong>Sponsor Kegiatan</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Rangkaian Kegiatan</h2>
+                <p>Uang donasi dipakai buat apa aja sih?</p>
+            </div>
+
+            <div class="agenda-grid">
+                <!-- Agenda 1 -->
+                <div class="agenda-item">
+                    <span class="agenda-date">🗓 Minggu, 1 Maret 2026</span>
+                    <h3>Charity For Baden Powell Day</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 15px;">📍 Panti Asuhan (Dalam Konfirmasi)</p>
+                    <p>Bakti Sosial, Hiburan Anak Panti, & Penyerahan Donasi.</p>
+                </div>
+
+                <!-- Agenda 2 -->
+                <div class="agenda-item">
+                    <span class="agenda-date">🗓 Minggu, 1 Maret 2026</span>
+                    <h3>Giat Ramadan Berbagi</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 15px;">📍 Simpang Tugu Wesi & Sayangan</p>
+                    <p>Pembagian Takjil On The Road.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAKET SPONSOR -->
+    <section id="paket" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilih Paket Partisipasi</h2>
+                <p>Bisa berupa Uang Tunai, Barang, atau Jasa senilai paket.</p>
+            </div>
+
+            <div class="tiers-grid">
+                
+                <!-- BRONZE -->
+                <a href="https://wa.me/6283852977796?text=Halo%20DKR%20Sawangan,%20saya%20ingin%20ambil%20paket%20BRONZE%20(Value%2050K)." target="_blank" class="tier-card">
+                    <div class="tier-icon">🥉</div>
+                    <h3>Bronze</h3>
+                    <div class="price">50K</div>
+                    <div class="price-sub">Value Rp 50.000 (Uang/Barang)</div>
+                    <ul class="benefits" style="list-style: none;">
+                        <li><i class="ph ph-check-circle"></i> Nama di Story IG (H-1 & Hari H)</li>
+                        <li><i class="ph ph-check-circle"></i> List Donatur di Feed</li>
+                        <li><i class="ph ph-heart"></i> Amal Jariyah</li>
+                    </ul>
+                    <div class="click-hint">Ambil Paket <i class="ph ph-arrow-right"></i></div>
+                </a>
+
+                <!-- SILVER -->
+                <a href="https://wa.me/6283852977796?text=Halo%20DKR%20Sawangan,%20saya%20ingin%20ambil%20paket%20SILVER%20(Value%20100K)." target="_blank" class="tier-card">
+                    <div class="tier-icon">🥈</div>
+                    <h3>Silver</h3>
+                    <div class="price">100K</div>
+                    <div class="price-sub">Value Rp 100.000 (Uang/Barang)</div>
+                    <ul class="benefits" style="list-style: none;">
+                        <li><i class="ph ph-check-circle"></i> <strong>Logo Kecil</strong> di E-Pamflet</li>
+                        <li><i class="ph ph-check-circle"></i> Mention Story IG</li>
+                        <li><i class="ph ph-check-circle"></i> E-Sertifikat Resmi</li>
+                        <li><i class="ph ph-storefront"></i> Branding Usaha</li>
+                    </ul>
+                    <div class="click-hint">Ambil Paket <i class="ph ph-arrow-right"></i></div>
+                </a>
+
+                <!-- GOLD -->
+                <a href="https://wa.me/6283852977796?text=Halo%20DKR%20Sawangan,%20saya%20ingin%20ambil%20paket%20GOLD%20(Value%20250K)." target="_blank" class="tier-card tier-gold">
+                    <div style="position: absolute; top: 15px; right: 15px; background: #d97706; color: white; padding: 4px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: bold;">POPULER ⭐</div>
+                    <div class="tier-icon">🥇</div>
+                    <h3>Gold</h3>
+                    <div class="price">250K</div>
+                    <div class="price-sub">Value Rp 250.000 (Uang/Barang)</div>
+                    <ul class="benefits" style="list-style: none;">
+                        <li><i class="ph ph-star-fill"></i> <strong>Logo Besar</strong> Banner & Pamflet</li>
+                        <li><i class="ph ph-star-fill"></i> 1x Feed Promosi Khusus</li>
+                        <li><i class="ph ph-star-fill"></i> Sertifikat Fisik + Pigura</li>
+                        <li><i class="ph ph-star-fill"></i> Mention Prioritas</li>
+                    </ul>
+                    <div class="click-hint">Ambil Paket <i class="ph ph-arrow-right"></i></div>
+                </a>
+
+                <!-- PLATINUM -->
+                <a href="https://wa.me/6283852977796?text=Halo%20DKR%20Sawangan,%20saya%20tertarik%20menjadi%20MITRA%20PLATINUM%20(Value%20diatas%20250K)." target="_blank" class="tier-card tier-platinum">
+                    <div style="flex: 1;">
+                        <div class="tier-icon">💎</div>
+                        <h3>Platinum / Mitra Utama</h3>
+                        <div class="price">> 250K</div>
+                        <div class="price-sub">Value diatas Rp 250.000</div>
+                    </div>
+                    <div style="flex: 1.5;">
+                        <ul class="benefits" style="list-style: none;">
+                            <li><i class="ph ph-crown"></i> <strong>Logo Eksklusif</strong> di Backdrop Utama</li>
+                            <li><i class="ph ph-microphone-stage"></i> Disebutkan oleh MC Kegiatan</li>
+                            <li><i class="ph ph-camera"></i> <strong>Sesi Foto Simbolis</strong> penyerahan donasi</li>
+                            <li><i class="ph ph-chats-circle"></i> <em>Benefit lain bisa diobrolin</em></li>
+                        </ul>
+                        <div class="click-hint">Hubungi Humas <i class="ph ph-arrow-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PEMBAYARAN -->
+    <section class="section">
+        <div class="container">
+            <div class="payment-box">
+                <h2 style="margin-bottom: 10px;">Rekening Donasi</h2>
+                <p style="margin-bottom: 30px; color: var(--text-gray);">a.n Nadia Devina Safira</p>
+
+                <div class="copy-container">
+                    <!-- Seabank -->
+                    <div class="copy-item">
+                        <div class="copy-text">
+                            <span>SEABANK</span>
+                            <strong id="rek1">901517101700</strong>
+                        </div>
+                        <button class="btn-copy" onclick="copyText('rek1')">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dana -->
+                    <div class="copy-item">
+                        <div class="copy-text">
+                            <span>DANA</span>
+                            <strong id="rek2">085803322151</strong>
+                        </div>
+                        <button class="btn-copy" onclick="copyText('rek2')">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QRIS -->
+                <div style="margin-bottom: 30px;">
+                    <p style="margin-bottom: 10px;">Atau scan QRIS ini:</p>
+                    <div class="qris-frame">
+                        <!-- GANTI GAMBAR QRIS DISINI -->
+                        <img src="https://placehold.co/200x200/f8fafc/cbd5e1?text=Scan+QRIS+Disini" alt="QRIS Code">
+                    </div>
+                </div>
+
+                <a href="https://wa.me/6283852977796" target="_blank" class="btn btn-wa">
+                    <i class="ph ph-whatsapp-logo" style="font-size: 1.2rem;"></i> Konfirmasi ke Galih
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-style: italic; font-weight: bold; margin-bottom: 10px;">"Satyaku Kudarmakan, Darmaku Kubaktikan."</p>
+            <p>Terima kasih atas partisipasi Kakak!</p>
+            <br>
+            <p><strong>DKR Sawangan 2025–2028</strong></p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT COPY YANG SUDAH DIPERBAIKI -->
+    <script>
+        function copyText(elementId) {
+            // Ambil teks dari elemen
+            var text = document.getElementById(elementId).innerText;
+            
+            // Buat elemen textarea sementara (cara paling kompatibel)
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // Masukkan ke dalam dokumen tapi sembunyikan
+            textArea.style.position = "fixed"; 
+            textArea.style.left = "-9999px";
+            textArea.style.top = "0";
+            document.body.appendChild(textArea);
+            
+            // Pilih dan copy teksnya
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'berhasil' : 'gagal';
+                alert('Nomor ' + text + ' berhasil disalin! ✅');
+            } catch (err) {
+                console.error('Oops, tidak bisa menyalin', err);
+                alert('Gagal menyalin otomatis, silakan salin manual ya kak 🙏');
+            }
+            
+            // Hapus textarea sementara
+            document.body.removeChild(textArea);
+        }
+    </script>
+
+</body>
+</html>
