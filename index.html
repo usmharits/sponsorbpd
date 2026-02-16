@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proposal Workshop Baden Powell Day & Giat Ramadan 1447 H - DKR Sawangan">
+    <title>Proposal - Baden Powell Day & Giat Ramadan 1447 H</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :
+    
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-title {
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-blue);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Rundown Timeline */
+        .timeline-box {
+            border-left: 3px solid var(--primary-blue);
+            padding-left: 20px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            position: absolute;
+            left: -29px;
+            top: 5px;
+            border: 3px solid white;
+        }
+
+        /* Sponsorship Cards - The Money Maker */
+        .sponsor-card {
+            border: none;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-header-custom {
+            padding: 20px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tier Specifics */
+        .bronze-tier .card-header-custom { background: #cd7f32; color: white; }
+        .silver-tier .card-header-custom { background: #C0C0C0; color: #333; }
+        
+        .gold-tier {
+            border: 2px solid var(--accent-gold);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+        .gold-tier .card-header-custom { 
+            background: var(--accent-gold); 
+            color: #333; 
+        }
+
+        .platinum-tier {
+            background: #212529;
+            color: white;
+            border: 2px solid #333;
+            transform: scale(1.05);
+            z-index: 3;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .platinum-tier .card-header-custom {
+            background: linear-gradient(45deg, #333, #555);
+            color: white;
+            border-bottom: 1px solid #555;
+        }
+        .platinum-tier .list-group-item {
+            background: transparent;
+            color: #ddd;
+            border-bottom: 1px solid #444;
+        }
+
+        .best-value-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary-blue);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            border-bottom-left-radius: 15px;
+            font-weight: bold;
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-sponsor {
+            width: 100%;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* Donation Section */
+        .bank-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 20px;
+            bo
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <!-- Logo Container: Black BG, Landscape -->
+                <div class="logo-container">
+                    <img src="logodkrhtp.png" alt="Logo DKR" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/100x40/000000/FFF?text=DKR+LOGO';">
+                </div>
+                <span class="d-none d-sm-block">DKR SAWANGAN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Acara</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rundown">Rundown</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#budget">Anggaran</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2 rounded-pill px-4" href="#sponsorship">Sponsorship</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h5 class="text-uppercase letter-spacing-2 mb-3 text-warning fw-bold">Proposal Kegiatan</h5>
+            <h1 class="display-3 hero-title mb-4">Workshop Baden Powell Day<br>& Giat Ramadan 1447 H</h1>
+            <p class="lead mb-5 opacity-75 d-none d-md-block">Menyatukan Semangat Bapak Pandu Dunia dengan Keberkahan Bulan Suci.<br>Mari Berbagi Kebahagiaan Bersama Anak Yatim.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#sponsorship" class="btn btn-primary btn-lg hero-btn">Jadi Sponsor</a>
+                <a href="#about" class="btn btn-outline-light btn-lg hero-btn">Detail Acara</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro & About -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Charity" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title text-start">Latar Belakang</h2>
+                    <p class="text-muted">
+                        Baden Powell mengajarkan kita untuk selalu *helpful* dan bersaudara. Di bulan Ramadan 1447 H yang penuh berkah ini, <strong>Dewan Kerja Ranting (DKR) Sawangan</strong> ingin menggabungkan semangat kepanduan tersebut dengan aksi nyata berbagi kasih.
+                    </p>
+                    <p class="mb-4">
+                        Kami mengundang Bapak/Ibu, instansi, dan para dermawan untuk menjadi bagian dari senyum 35 anak asuh di Panti Asuhan Ibu Zaenab. Ini bukan sekadar acara, ini adalah jembatan kebaikan Anda.
+                    </p>
+                    
+                    <div class="bg-light p-4 rounded-3 border-start border-5 border-primary">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-calendar-check me-2 text-primary"></i> Detail Pelaksanaan</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-clock me-2"></i> Minggu, 1 Maret 2026 | 13.00 - 15.00 WIB</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Panti Asuhan Yatim Piatu Ibu Zaenab, Dukun, Magelang</li>
+                            <li><i class="bi bi-people me-2"></i> 35 Anak Asuh (Laki-laki) & Anggota DKR</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rundown & Budget Grid -->
+    <section id="rundown" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Rundown -->
+                <div class="col-lg-7 mb-5" data-aos="fade-up">
+                    <h3 class="fw-bold mb-4">Susunan Acara</h3>
+                    <div class="timeline-box">
+                        <div class="timeline-item">
+                            <span class="badge bg-dark mb-1">13.00 - 13.30</span>
+                            <h5 class="fw-bold">Pembukaan & Sambutan</h5>
+                            <p class="text-muted small">Pembukaan formal oleh panitia dan perwakilan panti.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="badge bg-primary mb-1">13.30 - 14.30</span>
+                            <h5 class="fw-bold">Workshop "Spirit Baden Powell" & Fun Games</h5>
+                            <p class="text-muted small">Edukasi interaktif dan permainan seru bersama adik-adik.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="badge bg-success mb-1">14.30 - 15.00</span>
+                            <h5 class="fw-bold">Santunan & Doa Bersama</h5>
+                            <p class="text-muted small">Penyerahan donasi simbolis dan doa penutup.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="badge bg-warning text-dark mb-1">15.00 - Selesai</span>
+                            <h5 class="fw-bold">Bagi Takjil</h5>
+                            <p class="text-muted small">Geser ke lokasi Muntilan untuk pembagian takjil gratis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget -->
+                <div class="col-lg-5" id="budget" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="fw-bold mb-4">Transparansi Dana</h3>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <table class="table table-striped table-hover mb-0 table-budget">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th class="py-3 ps-4">Kebutuhan</th>
+                                        <th class="py-3 pe-4 text-end">Estimasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 py-3">Cetak Banner Kegiatan</td>
+                                        <td class="pe-4 py-3 text-end">Rp 100.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 py-3">Doorprize Games</td>
+                                        <td class="pe-4 py-3 text-end">Rp 60.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 py-3">Takjil On The Road (50 Pax)</td>
+                                        <td class="pe-4 py-3 text-end">Rp 250.000</td>
+                                    </tr>
+                                    <tr class="fw-bold table-primary">
+                                        <td class="ps-4 py-3">TOTAL KEBUTUHAN</td>
+                                        <td class="pe-4 py-3 text-end text-primary fs-5">Rp 410.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3 d-flex align-items-center">
+                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                        <small>Anggaran disusun se-efisien mungkin untuk memaksimalkan dampak kebaikan.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsorship Section -->
+    <section id="sponsorship">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Paket Sponsorship</h2>
+                <p class="text-muted">Pilih paket kontribusi terbaik Anda untuk mendukung kegiatan ini.</p>
+            </div>
+
+            <div class="row align-items-center g-4">
+                <!-- Bronze -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sponsor-card bronze-tier">
+                        <div class="card-header-custom">Bronze</div>
+                        <div class="card-body text-center p-4">
+                            <span class="price-tag text-muted">Rp 50.000</span>
+                            <ul class="list-group list-group-flush text-start mb-4 small">
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Logo kecil di E-Pamflet</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>List donatur di Feed IG</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Amal Jariyah</li>
+                            </ul>
+                            <a href="https://wa.me/6283852977796?text=Halo,%20DKR%20Sawangan!%20Saya%20tertarik%20dengan%20sponsor%20Bronze" target="_blank" class="btn btn-outline-dark btn-sponsor stretched-link">Pilih Bronze</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="sponsor-card silver-tier">
+                        <div class="card-header-custom">Silver</div>
+                        <div class="card-body text-center p-4">
+                            <span class="price-tag text-secondary">Rp 100.000</span>
+                            <ul class="list-group list-group-flush text-start mb-4 small">
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Logo kecil di E-Pamflet</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Mention di Story IG</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>E-Sertifikat</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Branding Usaha</li>
+                            </ul>
+                            <a href="https://wa.me/6283852977796?text=Halo,%20DKR%20Sawangan!%20Saya%20tertarik%20dengan%20sponsor%20Silver" target="_blank" class="btn btn-outline-dark btn-sponsor stretched-link">Pilih Silver</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold (Highlighted) -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="sponsor-card gold-tier">
+                        <div class="best-value-badge">POPULAR</div>
+                        <div class="card-header-custom">Gold</div>
+                        <div class="card-body text-center p-4">
+                            <span class="price-tag text-warning">Rp 250.000</span>
+                            <ul class="list-group list-group-flush text-start mb-4">
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-warning me-2"></i><strong>Logo BESAR</strong> di Banner</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-warning me-2"></i>Logo BESAR di E-Pamflet</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-warning me-2"></i>1x Feed Promosi Eksklusif</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-warning me-2"></i>Sertifikat Fisik</li>
+                                <li class="list-group-item border-0"><i class="bi bi-check-circle-fill text-warning me-2"></i>Mention Prioritas</li>
+                            </ul>
+                            <a href="https://wa.me/6283852977796?text=Halo,%20DKR%20Sawangan!%20Saya%20tertarik%20dengan%20sponsor%20Gold" target="_blank" class="btn btn-warning btn-sponsor fw-bold stretched-link">Ambil Gold</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platinum (Premium) -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="sponsor-card platinum-tier">
+                        <div class="card-header-custom"><i class="bi bi-star-fill text-warning me-2"></i>Platinum</div>
+                        <div class="card-body text-center p-4">
+                            <span class="price-tag text-white">> Rp 250.000</span>
+                            <ul class="list-group list-group-flush text-start mb-4">
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Logo EKSKLUSIF</strong></li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i>Ad-libs oleh MC</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i>Sesi Foto Simbolis</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i>1x Feed Promosi</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i>Sertifikat Fisik Premium</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-primary me-2"></i>Benefit Bisa Nego</li>
+                            </ul>
+                            <a href="https://wa.me/6283852977796?text=Halo,%20DKR%20Sawangan!%20Saya%20tertarik%20dengan%20sponsor%20Platinum" target="_blank" class="btn btn-light btn-sponsor fw-bold stretched-link">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="bg-light position-relative">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">Salurkan Donasi</h2>
+            <div class="row justify-content-center">
+                
+                <!-- Bank Item 1 -->
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="bank-card">
+                        <img src="seabank1.png" alt="Seabank" class="bank-logo">
+                        <h5 class="fw-bold">Nadia Devina Safira</h5>
+                        <p class="account-number" onclick="copyToClipboard('901517101700')">9015 1710 1700</p>
+                        <p class="copy-hint"><i class="bi bi-clipboard"></i> Tap nomor untuk menyalin</p>
+                    </div>
+                </div>
+
+                <!-- Bank Item 2 -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bank-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="Dana" class="bank-logo">
+                        <h5 class="fw-bold">Nadia Devina Safira</h5>
+                        <p class="account-number" onclick="copyToClipboard('085803322151')">0858 0332 2151</p>
+                        <p class="copy-hint"><i class="bi bi-clipboard"></i> Tap nomor untuk menyalin</p>
+                    </div>
+                </div>
+
+                <!-- QRIS -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bank-card p-0 overflow-hidden">
+                        <div class="bg-dark text-white p-2 mb-3">SCAN QRIS</div>
+                        <img src="qris.jpg" alt="QRIS Code" class="img-fluid px-4 pb-4" style="max-height: 180px;" onerror="this.onerror=null; this.src='https://placehold.co/200x200/png?text=QRIS+CODE';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Konfirmasi Donasi & Kontak -->
+<div class="row justify-content-center mt-4" data-aos="fade-up">
+    <div class="col-lg-8">
+        <div class="bank-card">
+            <h5 class="fw-bold mb-3">Konfirmasi Donasi</h5>
+            <p class="text-muted small mb-3">
+                Setelah melakukan transfer / scan QRIS, mohon lakukan konfirmasi agar donasi dapat kami catat.
+            </p>
+
+            <a href="https://wa.me/6283852977796?text=Halo%20DKR%20Sawangan,%20saya%20ingin%20konfirmasi%20donasi"
+               target="_blank"
+               class="btn btn-success rounded-pill px-4 me-2 mb-2">
+               <i class="bi bi-whatsapp me-2"></i> Konfirmasi Donasi
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="bank-card">
+            <h5 class="fw-bold mb-3">Kontak Panitia</h5>
+            <p class="text-muted small mb-3">
+                Jika ada pertanyaan seputar kegiatan, sponsorship, atau donasi silakan hubungi kami.
+            </p>
+
+            <a href="https://wa.me/6283852977796"
+               target="_blank"
+               class="btn btn-primary rounded-pill px-4">
+               <i class="bi bi-chat-dots-fill me-2"></i> Hubungi Panitia
+            </a>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 <strong>Dewan Kerja Ranting (DKR) Sawangan</strong>. All Rights Reserved.</p>
+            <p class="small text-muted">Workshop Baden Powell Day & Giat Ramadan 1447 H</p>
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="#donate" class="btn btn-primary btn-lg rounded-pill">
+            <i class="bi bi-heart-fill me-2"></i> Donasi Sekarang
+        </a>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+        });
+
+        // Copy Clipboard Function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Tampilkan toast sederhana atau alert
+                alert('Nomor rekening ' + text + ' berhasil disalin!');
+            }, function(err) {
+                console.error('Gagal menyalin: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
